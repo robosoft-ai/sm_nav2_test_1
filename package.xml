@@ -4,8 +4,8 @@
   <name>sm_nav2_test_1</name>
   <version>0.1.0</version>
   <description>State Machine for Isaac Sim package</description>
-  <maintainer email="pablo@ibrobotics.com">admin</maintainer>
-  <license>Copyright IBR</license>
+  <maintainer email="brett@robosoft.ai">admin</maintainer>
+  <license>Copyright Robosoft</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
@@ -28,7 +28,6 @@
   <depend>sr_conditional</depend>
   <depend>visualization_msgs</depend>
   <depend>tf2</depend>
-  <depend>ue_msgs</depend>
   
   <depend>backward_global_planner</depend>
   <depend>backward_local_planner</depend>

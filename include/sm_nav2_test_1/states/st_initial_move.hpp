@@ -36,8 +36,8 @@ struct StInitialMove
 
   // STATE FUNCTIONS
   static void staticConfigure() {
-    configure_orthogonal<OrTimer, CbTimerCountdownOnce>(10);
-    //configure_orthogonal<OrNavigation, CbSleepFor>(10s);
+    //configure_orthogonal<OrTimer, CbTimerCountdownOnce>(10s); I would like to use the CLtimer instead
+    configure_orthogonal<OrNavigation, CbSleepFor>(10s);
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
 
