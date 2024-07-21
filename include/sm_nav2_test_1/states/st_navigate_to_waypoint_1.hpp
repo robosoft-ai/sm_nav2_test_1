@@ -59,7 +59,7 @@ struct StNavigateToWaypoint1 : smacc2::SmaccState<StNavigateToWaypoint1, MsIsaac
 
     // x: 0.0 #-2.0
     // y: 5.25 # 0.5
-    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-5.0,-5.0, 0.0);
+    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-2.0, 2.0, 0.0);
     configure_orthogonal<OrNavigation, CbResumeSlam>();
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
