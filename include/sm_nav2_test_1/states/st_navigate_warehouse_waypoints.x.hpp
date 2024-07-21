@@ -28,7 +28,7 @@ using namespace cl_keyboard;
 // STATE DECLARATION
 struct StNavigateWarehouseWaypointsX
     : smacc2::SmaccState<StNavigateWarehouseWaypointsX,
-                         MsIsaacExplorationRunMode> {
+                         MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
   // CUSTOM TRANSITION TAGS

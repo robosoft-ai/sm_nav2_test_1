@@ -31,7 +31,7 @@ using cl_nav2z::CbPauseSlam;
 
 // STATE DECLARATION
 struct StPauseSlam
-    : smacc2::SmaccState<StPauseSlam, MsIsaacExplorationRunMode> {
+    : smacc2::SmaccState<StPauseSlam, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
   // TRANSITION TABLE
   typedef mpl::list<Transition<EvCbSuccess<CbPauseSlam, OrNavigation>,

@@ -29,7 +29,7 @@ using namespace std::chrono_literals;
 
 // STATE DECLARATION
 struct StFinalState
-    : smacc2::SmaccState<StFinalState, MsIsaacExplorationRunMode> {
+    : smacc2::SmaccState<StFinalState, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
   // TRANSITION TABLE

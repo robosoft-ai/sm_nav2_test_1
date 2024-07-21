@@ -31,7 +31,7 @@ using smacc2::client_behaviors::CbSleepFor;
 
 // STATE DECLARATION
 struct StNavigateToAprilTagWorkArea
-    : smacc2::SmaccState<StNavigateToAprilTagWorkArea, MsIsaacExplorationRunMode> 
+    : smacc2::SmaccState<StNavigateToAprilTagWorkArea, MsNav2Test1RunMode> 
 {
   using SmaccState::SmaccState;
 

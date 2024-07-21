@@ -21,18 +21,21 @@
 #include <smacc2/smacc.hpp>
 namespace sm_nav2_test_1 {
 // STATE DECLARATION
-class MsIsaacExplorationRunMode
-    : public smacc2::SmaccState<MsIsaacExplorationRunMode, SmNav2Test1,
-                                StAcquireSensors> {
+class MsNav2Test1RecoveryMode
+    : public smacc2::SmaccState<MsNav2Test1RecoveryMode,
+                                SmNav2Test1> {
 public:
   using SmaccState::SmaccState;
 
   // TRANSITION TABLE
   typedef mpl::list<
 
-      Transition<EvGlobalError, MsIsaacExplorationRecoveryMode>
+      Transition<EvGlobalError,
+                 smacc2::deep_history<
+                     typename MsNav2Test1RunMode::LastDeepState>>
 
       >
       reactions;
+  // typedef Transition<EvGlobalError, MsNav2Test1RunMode> reactions;
 };
 } // namespace sm_nav2_test_1

@@ -42,7 +42,7 @@ enum class TDirection { LEFT, RIGHT };
 using namespace sm_nav2_test_1::s_pattern_states;
 
 // STATE DECLARATION
-struct SsSPattern1 : smacc2::SmaccState<SsSPattern1, MsIsaacExplorationRunMode,
+struct SsSPattern1 : smacc2::SmaccState<SsSPattern1, MsNav2Test1RunMode,
                                         StiSPatternLoopStart> {
 public:
   using SmaccState::SmaccState;
