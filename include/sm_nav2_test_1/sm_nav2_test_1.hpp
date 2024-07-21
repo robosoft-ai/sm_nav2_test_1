@@ -92,8 +92,8 @@ class StNavigateToWaypoint1;
 
 // SUPERSTATE FORWARD DECLARATIONS
 // MODE STATES FORWARD DECLARATIONS
-class MsIsaacExplorationRunMode;
-class MsIsaacExplorationRecoveryMode;
+class MsNav2Test1RunMode;
+class MsNav2Test1RecoveryMode;
 
 namespace SS1 {
 class SsRadialPattern1;
@@ -130,7 +130,7 @@ namespace sm_nav2_test_1 {
 ///  for the development of state machines
 struct SmNav2Test1
     : public smacc2::SmaccStateMachineBase<SmNav2Test1,
-                                           MsIsaacExplorationRunMode> {
+                                           MsNav2Test1RunMode> {
   typedef mpl::bool_<false> shallow_history;
   typedef mpl::bool_<false> deep_history;
   typedef mpl::bool_<false> inherited_deep_history;
@@ -152,9 +152,9 @@ struct SmNav2Test1
 } // namespace sm_nav2_test_1
 
 // MODE STATES
-#include <sm_nav2_test_1/modestates/ms_isaac_exploration_run_mode.hpp>
+#include <sm_nav2_test_1/modestates/ms_nav2_test_1_run_mode.hpp>
 
-#include <sm_nav2_test_1/modestates/ms_isaac_exploration_recovery_mode.hpp>
+#include <sm_nav2_test_1/modestates/ms_nav2_test_1_recovery_mode.hpp>
 
 // SUPERSTATES
 #include <sm_nav2_test_1/superstates/ss_f_pattern_1.hpp>

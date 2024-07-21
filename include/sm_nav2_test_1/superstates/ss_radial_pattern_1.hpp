@@ -36,7 +36,7 @@ using namespace sm_nav2_test_1::radial_motion_states;
 
 // STATE DECLARATION
 struct SsRadialPattern1
-    : smacc2::SmaccState<SsRadialPattern1, MsIsaacExplorationRunMode,
+    : smacc2::SmaccState<SsRadialPattern1, MsNav2Test1RunMode,
                          StiRadialLoopStart> {
 public:
   using SmaccState::SmaccState;

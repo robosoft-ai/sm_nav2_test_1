@@ -32,7 +32,7 @@ using smacc2::client_behaviors::CbRosStop2;
 
 // STATE DECLARATION
 struct StFinalReturnBackToOrigin
-    : smacc2::SmaccState<StFinalReturnBackToOrigin, MsIsaacExplorationRunMode> 
+    : smacc2::SmaccState<StFinalReturnBackToOrigin, MsNav2Test1RunMode> 
 {
   using SmaccState::SmaccState;
 

@@ -13,7 +13,7 @@ using namespace cl_keyboard;
 
 // STATE DECLARATION
 struct StInitialMoveStop
-    : smacc2::SmaccState<StInitialMoveStop, MsIsaacExplorationRunMode> {
+    : smacc2::SmaccState<StInitialMoveStop, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
    // DECLARE CUSTOM OBJECT TAGS

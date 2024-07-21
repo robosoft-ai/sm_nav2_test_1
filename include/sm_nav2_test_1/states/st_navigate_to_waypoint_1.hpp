@@ -34,7 +34,7 @@ using namespace cl_keyboard;
 
 
 // STATE DECLARATION
-struct StNavigateToWaypoint1 : smacc2::SmaccState<StNavigateToWaypoint1, MsIsaacExplorationRunMode>
+struct StNavigateToWaypoint1 : smacc2::SmaccState<StNavigateToWaypoint1, MsNav2Test1RunMode>
 {
   using SmaccState::SmaccState;
 

@@ -30,7 +30,7 @@ using smacc2::client_behaviors::CbRosLaunch2;
 
 // STATE DECLARATION
 struct StStartStaticLocalization
-    : smacc2::SmaccState<StStartStaticLocalization, MsIsaacExplorationRunMode> {
+    : smacc2::SmaccState<StStartStaticLocalization, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
   // TRANSITION TABLE
   typedef mpl::list<Transition<EvCbSuccess<CbRosLaunch2, OrNavigation>,

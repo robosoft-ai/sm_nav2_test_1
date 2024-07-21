@@ -15,7 +15,7 @@ using namespace cl_ros_timer;
 
 // STATE DECLARATION
 struct StInitialMove
-    : smacc2::SmaccState<StInitialMove, MsIsaacExplorationRunMode> {
+    : smacc2::SmaccState<StInitialMove, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
   // DECLARE CUSTOM OBJECT TAGS

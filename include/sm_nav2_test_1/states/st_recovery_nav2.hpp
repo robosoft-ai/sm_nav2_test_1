@@ -18,7 +18,7 @@ using smacc2::client_behaviors::CbRosLaunch2;
 
 // STATE DECLARATION
 struct StRecoveryNav2
-    : smacc2::SmaccState<StRecoveryNav2, MsIsaacExplorationRunMode> {
+    : smacc2::SmaccState<StRecoveryNav2, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
   // DECLARE CUSTOM OBJECT AND TRANSITION TAGS

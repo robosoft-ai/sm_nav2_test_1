@@ -39,7 +39,7 @@ namespace SS4 {
 using namespace f_pattern_states;
 
 // STATE DECLARATION
-struct SsFPattern1 : smacc2::SmaccState<SsFPattern1, MsIsaacExplorationRunMode,
+struct SsFPattern1 : smacc2::SmaccState<SsFPattern1, MsNav2Test1RunMode,
                                         StiFPatternStartLoop<SsFPattern1>> {
 public:
   using SmaccState::SmaccState;

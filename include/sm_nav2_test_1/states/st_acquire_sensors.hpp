@@ -38,7 +38,7 @@ using smacc2::client_behaviors::CbRosLaunch2;
 
 // STATE DECLARATION
 struct StAcquireSensors
-    : smacc2::SmaccState<StAcquireSensors, MsIsaacExplorationRunMode> {
+    : smacc2::SmaccState<StAcquireSensors, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
   // DECLARE CUSTOM OBJECT AND TRANSITION TAGS
@@ -55,7 +55,7 @@ struct StAcquireSensors
 
       Transition<EvCbSuccess<CbSleepFor, OrNavigation>, StRecoveryNav2, ABORT>,
 
-      Transition<EvGlobalError, MsIsaacExplorationRecoveryMode>,    
+      Transition<EvGlobalError, MsNav2Test1RecoveryMode>,    
 
       //Keyboard events
       Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMove, NEXT>  

@@ -4,8 +4,13 @@
 [https://nvidia-isaac-ros.github.io/getting_started/dev_env_setup.html](https://nvidia-isaac-ros.github.io/getting_started/dev_env_setup.html)  
 [https://nvidia-isaac-ros.github.io/robots/nova_carter/getting_started.html#nova-carter-dev-setup](https://nvidia-isaac-ros.github.io/robots/nova_carter/getting_started.html#nova-carter-dev-setup)  
 
-## Reference Example
-[https://nvidia-isaac-ros.github.io/reference_workflows/isaac_perceptor/run_perceptor_in_sim.html](https://nvidia-isaac-ros.github.io/reference_workflows/isaac_perceptor/run_perceptor_in_sim.html)  
+## Simulation Environment
+For simulation, we'll be using IsaacSim 4.0.
+Under the IsaacAssets tab go to SAMPLES/NVBLOX/nvblox_sample_scene.
+
+Once inside, you'll need to fing the NOVA_Carter_ROS_nvblox_setup Folder.
+For caster_wheel_left and caster_wheel_right, set the Max Angular Velocity to 1000.
+Then, find the ros_lidars folder and enable publish_front_2d_lidar_scan and front_2d_lidar_render_product.
 
 ## Let's Get Started
 We begin by cloning isaac_ros_common and nova_carter repos to the src folder of our local workspace. My local workspace is ~/workspace/humble_ws
