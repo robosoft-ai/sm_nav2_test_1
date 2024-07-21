@@ -25,4 +25,4 @@ int main(int argc, char **argv) {
   smacc2::run<SmNav2Test1>();
 }
 
-int StExploreNextPoint::count_visited_states = 0;
+//int StExploreNextPoint::count_visited_states = 0;

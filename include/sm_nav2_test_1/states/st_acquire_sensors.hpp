@@ -69,7 +69,7 @@ struct StAcquireSensors
     configure_orthogonal<OrSlam, CbRosLaunch2>("sm_nav2_test_1", "slam_launch.py", smacc2::client_behaviors::RosLaunchMode::LAUNCH_DETTACHED);
     configure_orthogonal<OrNavigation, CbRosLaunch2>("sm_nav2_test_1", "carter_navigation_rtx.launch.py", smacc2::client_behaviors::RosLaunchMode::LAUNCH_DETTACHED);
     configure_orthogonal<OrNavigation, CbWaitActionServer>(10s);
-    configure_orthogonal<OrAssigner, CbWaitNav2Nodes>();
+    //configure_orthogonal<OrAssigner, CbWaitNav2Nodes>();
     configure_orthogonal<OrNavigation, CbSleepFor>(12s);
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
 
@@ -78,8 +78,8 @@ struct StAcquireSensors
         SrAllEventsGo,
         smacc2::state_reactors::EvAllGo<SrAllEventsGo, SrAcquireSensors>,
         mpl::list<
-            EvCbSuccess<CbWaitActionServer, OrNavigation>,
-            EvCbSuccess<CbWaitNav2Nodes, OrAssigner>
+            EvCbSuccess<CbWaitActionServer, OrNavigation>//,
+            // EvCbSuccess<CbWaitNav2Nodes, OrAssigner>
             // EvCbSuccess<CbSleepFor, OrNavigation>>
             >>();
   }

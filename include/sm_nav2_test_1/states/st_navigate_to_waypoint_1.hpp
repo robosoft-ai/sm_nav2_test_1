@@ -26,9 +26,11 @@
 namespace sm_nav2_test_1 {
 using namespace smacc2::default_events;
 using smacc2::client_behaviors::CbSleepFor;
+using cl_nav2z::CbNavigateGlobalPosition;
 using namespace std::chrono_literals;
 using namespace cl_nav2z;
 using namespace cl_keyboard;
+
 
 
 // STATE DECLARATION
