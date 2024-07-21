@@ -31,8 +31,8 @@
 // CLIENT BEHAVIORS
 #include <ros_timer_client/client_behaviors/cb_ros_timer.hpp>
 #include <ros_timer_client/client_behaviors/cb_timer_countdown_once.hpp>
-#include <sm_nav2_test_1/clients/cl_rrt_explore_assigner/cl_rrt_explore_assigner.hpp>
-#include <sm_nav2_test_1/clients/cl_rrt_explore_assigner/client_behaviors/cb_explore_next_point.hpp>
+//#include <sm_nav2_test_1/clients/cl_rrt_explore_assigner/cl_rrt_explore_assigner.hpp>
+//#include <sm_nav2_test_1/clients/cl_rrt_explore_assigner/client_behaviors/cb_explore_next_point.hpp>
 
 #include <keyboard_client/cl_keyboard.hpp>
 #include <keyboard_client/client_behaviors/cb_default_keyboard_behavior.hpp>
@@ -52,8 +52,8 @@
 #include <sm_nav2_test_1/clients/cl_nav2z/client_behaviors/cb_save_slam_map.hpp>
 
 
-#include <sm_nav2_test_1/clients/cl_rrt_explore_assigner/client_behaviors/cb_explore_next_point.hpp>
-#include <sm_nav2_test_1/clients/cl_rrt_explore_assigner/client_behaviors/cb_start_exploration.hpp>
+//#include <sm_nav2_test_1/clients/cl_rrt_explore_assigner/client_behaviors/cb_explore_next_point.hpp>
+//#include <sm_nav2_test_1/clients/cl_rrt_explore_assigner/client_behaviors/cb_start_exploration.hpp>
 
 #include <sm_nav2_test_1/clients/cl_april_tag_detector/cl_april_tag_detector.hpp>
 #include <sm_nav2_test_1/clients/cl_april_tag_detector/client_behaviors/cb_detect_apriltag.hpp>
@@ -70,7 +70,7 @@
 #include <sr_event_countdown/sr_event_countdown.hpp>
 
 // ORTHOGONALS
-#include <sm_nav2_test_1/orthogonals/or_assigner.hpp>
+//#include <sm_nav2_test_1/orthogonals/or_assigner.hpp>
 #include <sm_nav2_test_1/orthogonals/or_keyboard.hpp>
 #include <sm_nav2_test_1/orthogonals/or_navigation.hpp>
 #include <sm_nav2_test_1/orthogonals/or_perception.hpp>
@@ -89,17 +89,17 @@ class StInitialMove;
 class StInitialMoveStop;
 class StRecoveryNav2;
 class StNavigateWarehouseWaypointsX;
-class StStartExploration;
-class StSetExplorationArea;
-class StExploreNextPoint;
-class StExploreCheckPoint;
-class StExplorationPointSpinning;
+//class StStartExploration;
+//class StSetExplorationArea;
+//class StExploreNextPoint;
+//class StExploreCheckPoint;
+//class StExplorationPointSpinning;
 class StPauseSlam;
 class StStartStaticLocalization;
 class StFinalState;
 class StNavigateToAprilTagWorkArea;
 class StFinalReturnBackToOrigin;
-class StFinalMapSaving;
+//class StFinalMapSaving;
 class StNavigateToWaypoint1;
 
 // SUPERSTATE FORWARD DECLARATIONS
@@ -151,7 +151,7 @@ struct SmNav2Test1
 
   void onInitialize() override {
     this->createOrthogonal<OrNavigation>();
-    this->createOrthogonal<OrAssigner>();
+    //this->createOrthogonal<OrAssigner>();
     this->createOrthogonal<OrPerception>();
     this->createOrthogonal<OrKeyboard>();
     this->createOrthogonal<OrSlam>();
@@ -180,17 +180,17 @@ struct SmNav2Test1
 #include <sm_nav2_test_1/states/st_recovery_nav2.hpp>
 #include <sm_nav2_test_1/states/st_initial_move.hpp>
 #include <sm_nav2_test_1/states/st_initial_move_stop.hpp>
-#include <sm_nav2_test_1/states/st_exploration_point_spinning.hpp>
-#include <sm_nav2_test_1/states/st_explore_next_point.hpp>
-#include <sm_nav2_test_1/states/st_explore_check_point.hpp>
+//#include <sm_nav2_test_1/states/st_exploration_point_spinning.hpp>
+//#include <sm_nav2_test_1/states/st_explore_next_point.hpp>
+//#include <sm_nav2_test_1/states/st_explore_check_point.hpp>
 #include <sm_nav2_test_1/states/st_final_state.hpp>
 #include <sm_nav2_test_1/states/st_navigate_to_apriltag_work_area.hpp>
 #include <sm_nav2_test_1/states/st_navigate_warehouse_waypoints.x.hpp>
 #include <sm_nav2_test_1/states/st_pause_slam.hpp>
-#include <sm_nav2_test_1/states/st_set_exploration_area.hpp>
-#include <sm_nav2_test_1/states/st_start_exploration.hpp>
+//#include <sm_nav2_test_1/states/st_set_exploration_area.hpp>
+//#include <sm_nav2_test_1/states/st_start_exploration.hpp>
 #include <sm_nav2_test_1/states/st_start_static_localization.hpp>
 #include <sm_nav2_test_1/states/st_navigate_to_waypoint_1.hpp>
 
-#include <sm_nav2_test_1/states/st_final_map_saving.hpp>
+//#include <sm_nav2_test_1/states/st_final_map_saving.hpp>
 #include <sm_nav2_test_1/states/st_final_return_back_to_origin.hpp>

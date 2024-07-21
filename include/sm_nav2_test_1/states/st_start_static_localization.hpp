@@ -35,8 +35,7 @@ struct StStartStaticLocalization
   // TRANSITION TABLE
   typedef mpl::list<Transition<EvCbSuccess<CbRosLaunch2, OrNavigation>,
                                StNavigateToAprilTagWorkArea, SUCCESS>,
-                    Transition<EvCbFailure<CbRosLaunch2, OrNavigation>,
-                               StExploreNextPoint, ABORT>,
+                   
                     Transition<EvCbSuccess<CbSleepFor, OrNavigation>,
                                StNavigateToAprilTagWorkArea, SUCCESS>>
       reactions;

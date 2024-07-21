@@ -37,8 +37,8 @@ struct StExplorationPointSpinning
                          MsIsaacExplorationRunMode> {
   using SmaccState::SmaccState;
   // TRANSITION TABLE
-  typedef mpl::list<Transition<EvCbSuccess<CbPureSpinning, OrNavigation>, StExploreNextPoint, SUCCESS>,
-                    Transition<EvCbFailure<CbPureSpinning, OrNavigation>, StExploreNextPoint, ABORT>,
+  typedef mpl::list<//Transition<EvCbSuccess<CbPureSpinning, OrNavigation>, StExploreNextPoint, SUCCESS>,
+                    //Transition<EvCbFailure<CbPureSpinning, OrNavigation>, StExploreNextPoint, ABORT>,
                     Transition<cl_keyboard::EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StFinalReturnBackToOrigin, SUCCESS>
                     // Transition<cl_apriltag_detector::EvUnvisitedAprilTagDetected<CbDetectAprilTag,
                     // OrPerception>,

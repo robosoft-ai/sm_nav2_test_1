@@ -38,7 +38,7 @@ struct StFinalReturnBackToOrigin
 
   // TRANSITION TABLE
   typedef mpl::list<
-      Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, StFinalMapSaving, SUCCESS>
+      Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, StFinalState, SUCCESS>
       // Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, StFinalMapSaving, SUCCESS>
       // Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, SS2::SsRadialPattern2, SUCCESS>
       >

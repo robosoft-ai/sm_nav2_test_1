@@ -66,7 +66,6 @@ struct StNavigateWarehouseWaypointsX
     // configure_orthogonal<OrNavigation, CbPositionControlFreeSpace>();
     configure_orthogonal<OrNavigation, CbNavigateNextWaypoint>();
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
-    configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
 
   void onEntry() {}
