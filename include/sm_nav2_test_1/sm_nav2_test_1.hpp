@@ -89,6 +89,7 @@ class StFinalState;
 class StNavigateToAprilTagWorkArea;
 class StFinalReturnBackToOrigin;
 class StNavigateToWaypoint1;
+class StLoadingWayPointsFile;
 
 // SUPERSTATE FORWARD DECLARATIONS
 // MODE STATES FORWARD DECLARATIONS
@@ -174,4 +175,5 @@ struct SmNav2Test1
 #include <sm_nav2_test_1/states/st_pause_slam.hpp>
 #include <sm_nav2_test_1/states/st_start_static_localization.hpp>
 #include <sm_nav2_test_1/states/st_navigate_to_waypoint_1.hpp>
+#include <sm_nav2_test_1/states/st_loading_waypoints_file.hpp>
 #include <sm_nav2_test_1/states/st_final_return_back_to_origin.hpp>

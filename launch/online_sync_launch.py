@@ -31,8 +31,8 @@ def generate_launch_description():
         executable="sync_slam_toolbox_node",
         name="slam_toolbox",
         prefix="xterm -hold -e",
-        output="screen",
-        remappings=[("/scan", "/front_2d_lidar/scan")],
+        output="screen"
+        # remappings=[("/scan", "/front_2d_lidar/scan")],
     )
 
     ld = LaunchDescription()

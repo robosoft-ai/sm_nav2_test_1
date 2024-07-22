@@ -24,7 +24,7 @@
 #include <smacc2/smacc_client_behavior.hpp>
 
 namespace sm_nav2_test_1 {
-struct CbLoadWaypointsFile : public smacc2::SmaccClientBehavior {
+struct CbLoadWaypointsFile : public smacc2::SmaccAsyncClientBehavior {
 public:
   CbLoadWaypointsFile(std::string filepath) : filepath_(filepath) {}
 
@@ -46,6 +46,7 @@ public:
 
     // change this to skip some points of the yaml file, default = 0
     waypointsNavigator_->currentWaypoint_ = 0;
+    this->postSuccessEvent();
   }
 
   void onExit() override {}
