@@ -51,6 +51,11 @@ install(
   DESTINATION include
 )
 
+install(DIRECTORY
+  scripts
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 install(TARGETS
   ${PROJECT_NAME}_node
 

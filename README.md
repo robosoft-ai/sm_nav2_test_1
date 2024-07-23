@@ -220,6 +220,9 @@ Source the workspace...
  ```
 source install/setup.bash
  ```
+```
+ros2 run sm_nav2_test_1 lidar_completion.py --ros-args -r /scan_input:=/scan2 -r /scan_output:=/scan
+```
  ```
 ros2 launch sm_nav2_test_1 sm_nav2_test_1_launch.py 
  ```
