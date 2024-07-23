@@ -20,20 +20,14 @@
 
 #pragma once
 
-#include <sm_nav2_test_1/clients/cl_april_tag_detector/cl_april_tag_detector.hpp>
 #include <smacc2/smacc.hpp>
 
 namespace sm_nav2_test_1 {
-using namespace std::chrono_literals;
 
 class OrPerception : public smacc2::Orthogonal<OrPerception> {
 public:
   void onInitialize() override {
-    auto assignerclient =
-        this->createClient<cl_apriltag_detector::ClAprilTagDetector>();
-    // auto roslaunch = this->createClient<smacc2::client_bases::ClRosLaunch>(
-    // "sm_nav2_test_1",
-    // "isaac_ros_apriltag_isaac_sim_pipeline.launch.py");
+  
   }
 };
 } // namespace sm_nav2_test_1

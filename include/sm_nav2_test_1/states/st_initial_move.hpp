@@ -37,7 +37,7 @@ struct StInitialMove
   // STATE FUNCTIONS
   static void staticConfigure() {
     //configure_orthogonal<OrTimer, CbTimerCountdownOnce>(10s); I would like to use the CLtimer instead
-    configure_orthogonal<OrNavigation, CbSleepFor>(10s);
+    configure_orthogonal<OrNavigation, CbSleepFor>(20s);
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
 
@@ -48,8 +48,8 @@ struct StInitialMove
     this->requiresClient(clNav);
     auto pub = clNav->getComponent<smacc2::components::CpTopicPublisher<geometry_msgs::msg::Twist>>();
     auto twist_msg = std::make_shared<geometry_msgs::msg::Twist>();
-    twist_msg->linear.x = 2.0; 
-    twist_msg->angular.z = 1.8; 
+    twist_msg->linear.x = 0.3; 
+    twist_msg->angular.z = 0.3; 
     pub->publish(*twist_msg);
   }
 };
