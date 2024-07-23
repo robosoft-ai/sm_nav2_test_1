@@ -35,7 +35,7 @@ struct StPauseSlam
   using SmaccState::SmaccState;
   // TRANSITION TABLE
   typedef mpl::list<Transition<EvCbSuccess<CbPauseSlam, OrNavigation>,
-                               StStartStaticLocalization, SUCCESS>
+                               StFinalState, SUCCESS>
                     //  Transition<EvCbSuccess<CbSleepFor, OrNavigation>,
                     //  StStartStaticLocalization, SUCCESS>
                     >

@@ -42,15 +42,13 @@
 
 // #include
 // <sm_nav2_test_1/clients/nav2z_client/client_behaviors/cb_navigate_next_waypoint.hpp>
-#include <sm_nav2_test_1/clients/cl_nav2z/client_behaviors/cb_active_stop.hpp>
-#include <sm_nav2_test_1/clients/cl_nav2z/client_behaviors/cb_load_waypoints_file.hpp>
-#include <sm_nav2_test_1/clients/cl_nav2z/client_behaviors/cb_navigate_next_waypoint_free.hpp>
-#include <sm_nav2_test_1/clients/cl_nav2z/client_behaviors/cb_position_control_free_space.hpp>
-#include <sm_nav2_test_1/clients/cl_nav2z/client_behaviors/cb_pure_spinning.hpp>
-#include <sm_nav2_test_1/clients/cl_nav2z/client_behaviors/cb_save_slam_map.hpp>
+#include <nav2z_client/client_behaviors/cb_active_stop.hpp>
+#include <nav2z_client/client_behaviors/cb_load_waypoints_file.hpp>
+#include <nav2z_client/client_behaviors/cb_navigate_next_waypoint_free.hpp>
+#include <nav2z_client/client_behaviors/cb_position_control_free_space.hpp>
+#include <nav2z_client/client_behaviors/cb_pure_spinning.hpp>
+#include <nav2z_client/client_behaviors/cb_save_slam_map.hpp>
 
-#include <sm_nav2_test_1/clients/cl_april_tag_detector/cl_april_tag_detector.hpp>
-#include <sm_nav2_test_1/clients/cl_april_tag_detector/client_behaviors/cb_detect_apriltag.hpp>
 
 #include <ros_publisher_client/client_behaviors/cb_default_publish_loop.hpp>
 #include <ros_publisher_client/client_behaviors/cb_muted_behavior.hpp>
@@ -84,11 +82,10 @@ class StInitialMoveStop;
 class StRecoveryNav2;
 class StNavigateWarehouseWaypointsX;
 class StPauseSlam;
-class StStartStaticLocalization;
 class StFinalState;
-class StNavigateToAprilTagWorkArea;
 class StFinalReturnBackToOrigin;
 class StNavigateToWaypoint1;
+class StLoadingWayPointsFile;
 
 // SUPERSTATE FORWARD DECLARATIONS
 // MODE STATES FORWARD DECLARATIONS
@@ -169,9 +166,8 @@ struct SmNav2Test1
 #include <sm_nav2_test_1/states/st_initial_move.hpp>
 #include <sm_nav2_test_1/states/st_initial_move_stop.hpp>
 #include <sm_nav2_test_1/states/st_final_state.hpp>
-#include <sm_nav2_test_1/states/st_navigate_to_apriltag_work_area.hpp>
 #include <sm_nav2_test_1/states/st_navigate_warehouse_waypoints.x.hpp>
 #include <sm_nav2_test_1/states/st_pause_slam.hpp>
-#include <sm_nav2_test_1/states/st_start_static_localization.hpp>
 #include <sm_nav2_test_1/states/st_navigate_to_waypoint_1.hpp>
+#include <sm_nav2_test_1/states/st_loading_waypoints_file.hpp>
 #include <sm_nav2_test_1/states/st_final_return_back_to_origin.hpp>

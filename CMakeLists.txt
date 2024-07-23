@@ -21,9 +21,6 @@ ament_export_include_directories(include)
 
 ament_auto_add_executable(${PROJECT_NAME}_node
                           src/sm_nav2_test_1/sm_nav2_test_1.cpp
-                          src/sm_nav2_test_1/clients/client_behaviors/nav2z_client/cb_active_stop.cpp
- #                         src/sm_nav2_test_1/clients/client_behaviors/nav2z_client/cb_position_control_free_space.cpp
-#                          src/sm_nav2_test_1/clients/components/cl_rrt_explore_assigner/cp_visited_points_counter.cpp
 )
 
 
