@@ -85,6 +85,7 @@ class StPauseSlam;
 class StFinalState;
 class StFinalReturnBackToOrigin;
 class StNavigateToWaypoint1;
+class StNavigateToWaypoint2;
 class StLoadingWayPointsFile;
 
 // SUPERSTATE FORWARD DECLARATIONS
@@ -169,5 +170,6 @@ struct SmNav2Test1
 #include <sm_nav2_test_1/states/st_navigate_warehouse_waypoints.x.hpp>
 #include <sm_nav2_test_1/states/st_pause_slam.hpp>
 #include <sm_nav2_test_1/states/st_navigate_to_waypoint_1.hpp>
+#include <sm_nav2_test_1/states/st_navigate_to_waypoint_2.hpp>
 #include <sm_nav2_test_1/states/st_loading_waypoints_file.hpp>
 #include <sm_nav2_test_1/states/st_final_return_back_to_origin.hpp>

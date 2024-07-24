@@ -43,7 +43,7 @@ struct StNavigateWarehouseWaypointsX
 
   // TRANSITION TABLE
   typedef mpl::list<
-      Transition<cl_nav2z::EvWaypointFinal, StFinalState, SUCCESS>,
+      Transition<cl_nav2z::EvWaypointFinal, StNavigateToWaypoint2, SUCCESS>,
       // Transition<EvWaypoint3<ClNav2Z, OrNavigation>, SS5::SsSPattern1,
       // SUCCESS>, Transition<EvWaypoint11<ClNav2Z, OrNavigation>,
       // SS4::SsFPattern1, SUCCESS>, Transition<EvWaypoint1<ClNav2Z,
