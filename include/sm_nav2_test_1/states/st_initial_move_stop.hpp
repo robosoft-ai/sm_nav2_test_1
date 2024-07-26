@@ -23,9 +23,9 @@ struct StInitialMoveStop
 
   // TRANSITION TABLE
   typedef mpl::list<
-    Transition<EvCbSuccess<CbSleepFor, OrNavigation>, StNavigateToWaypoint1, SUCCESS>,
+    Transition<EvCbSuccess<CbSleepFor, OrNavigation>, StSpin2, SUCCESS>,
     //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StNavigateToWaypoint1, NEXT>,
+    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpin3, NEXT>,
     Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMove, PREVIOUS>
   > reactions;
 
