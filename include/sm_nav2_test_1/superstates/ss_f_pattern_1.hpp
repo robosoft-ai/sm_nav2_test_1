@@ -35,7 +35,7 @@ template <typename SS> class StiFPatternStartLoop;
 } // namespace f_pattern_states
 } // namespace sm_nav2_test_1
 namespace sm_nav2_test_1 {
-namespace SS4 {
+namespace SS3 {
 using namespace f_pattern_states;
 
 // STATE DECLARATION

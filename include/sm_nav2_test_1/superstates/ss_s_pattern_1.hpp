@@ -21,7 +21,7 @@
 #include <smacc2/smacc.hpp>
 
 namespace sm_nav2_test_1 {
-namespace SS5 {
+namespace SS2 {
 namespace sm_nav2_test_1 {
 namespace s_pattern_states {
 // FORWARD DECLARATIONS OF INNER STATES

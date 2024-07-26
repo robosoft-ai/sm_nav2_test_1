@@ -86,6 +86,8 @@ class StFinalState;
 class StFinalReturnBackToOrigin;
 class StNavigateToWaypoint1;
 class StNavigateToWaypoint2;
+class StNavigateToWaypoint3;
+class StNavigateToWaypoint4;
 class StLoadingWayPointsFile;
 
 // SUPERSTATE FORWARD DECLARATIONS
@@ -98,19 +100,11 @@ class SsRadialPattern1;
 }
 
 namespace SS2 {
-class SsRadialPattern2;
+class SsSPattern1;
 }
 
 namespace SS3 {
-class SsRadialPattern3;
-}
-
-namespace SS4 {
 class SsFPattern1;
-}
-
-namespace SS5 {
-class SsSPattern1;
 }
 
 // custom sm_nav2_test_1 event
@@ -157,8 +151,6 @@ struct SmNav2Test1
 // SUPERSTATES
 #include <sm_nav2_test_1/superstates/ss_f_pattern_1.hpp>
 #include <sm_nav2_test_1/superstates/ss_radial_pattern_1.hpp>
-#include <sm_nav2_test_1/superstates/ss_radial_pattern_2.hpp>
-#include <sm_nav2_test_1/superstates/ss_radial_pattern_3.hpp>
 #include <sm_nav2_test_1/superstates/ss_s_pattern_1.hpp>
 
 // STATES
@@ -171,5 +163,7 @@ struct SmNav2Test1
 #include <sm_nav2_test_1/states/st_pause_slam.hpp>
 #include <sm_nav2_test_1/states/st_navigate_to_waypoint_1.hpp>
 #include <sm_nav2_test_1/states/st_navigate_to_waypoint_2.hpp>
+#include <sm_nav2_test_1/states/st_navigate_to_waypoint_3.hpp>
+#include <sm_nav2_test_1/states/st_navigate_to_waypoint_4.hpp>
 #include <sm_nav2_test_1/states/st_loading_waypoints_file.hpp>
 #include <sm_nav2_test_1/states/st_final_return_back_to_origin.hpp>
