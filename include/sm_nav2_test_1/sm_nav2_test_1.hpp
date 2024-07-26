@@ -79,10 +79,10 @@ namespace sm_nav2_test_1 {
 class StAcquireSensors;
 class StInitialMove;
 class StInitialMoveStop;
+class StSwitchYard;
 class StRecoveryNav2;
-class StSpin1;
-class StSpin2;
-class StSpin3;
+class StSpinRight1;
+class StSpinLeft1;
 class StNavigateWarehouseWaypointsX;
 class StPauseSlam;
 class StFinalState;
@@ -161,10 +161,10 @@ struct SmNav2Test1
 #include <sm_nav2_test_1/states/st_recovery_nav2.hpp>
 #include <sm_nav2_test_1/states/st_initial_move.hpp>
 #include <sm_nav2_test_1/states/st_initial_move_stop.hpp>
+#include <sm_nav2_test_1/states/st_switch_yard.hpp>
 #include <sm_nav2_test_1/states/st_final_state.hpp>
-#include <sm_nav2_test_1/states/st_spin_1.hpp>
-#include <sm_nav2_test_1/states/st_spin_2.hpp>
-#include <sm_nav2_test_1/states/st_spin_3.hpp> 
+#include <sm_nav2_test_1/states/st_spin_left_1.hpp>
+#include <sm_nav2_test_1/states/st_spin_right_1.hpp> 
 #include <sm_nav2_test_1/states/st_navigate_warehouse_waypoints.x.hpp>
 #include <sm_nav2_test_1/states/st_pause_slam.hpp>
 #include <sm_nav2_test_1/states/st_navigate_to_waypoint_1.hpp>

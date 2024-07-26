@@ -31,8 +31,8 @@ using cl_keyboard::CbDefaultKeyboardBehavior;
 using namespace cl_nav2z;
 
 // STATE DECLARATION
-struct StSpin2
-    : smacc2::SmaccState<StSpin2, MsNav2Test1RunMode> {
+struct StSpinRight1
+    : smacc2::SmaccState<StSpinRight1, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
     // DECLARE CUSTOM OBJECT TAGS
@@ -40,9 +40,9 @@ struct StSpin2
   struct PREVIOUS : ABORT{};
 
   // TRANSITION TABLE
-  typedef mpl::list<Transition<EvCbSuccess<CbPureSpinning, OrNavigation>, StSpin3, SUCCESS>,
-                    Transition<EvCbFailure<CbPureSpinning, OrNavigation>, StSpin2, ABORT>,
-                    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpin3, NEXT>
+  typedef mpl::list<Transition<EvCbSuccess<CbPureSpinning, OrNavigation>, StSpinLeft1, SUCCESS>,
+                    Transition<EvCbFailure<CbPureSpinning, OrNavigation>, StSpinRight1, ABORT>,
+                    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpinLeft1, NEXT>
                     >
       reactions;
 

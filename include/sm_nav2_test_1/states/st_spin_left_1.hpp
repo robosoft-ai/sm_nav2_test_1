@@ -18,12 +18,17 @@
  *
  ******************************************************************************************************************/
 
-namespace sm_nav2_test_1 {
-using namespace cl_keyboard;
+#pragma once
+
+#include <smacc2/smacc.hpp>
+namespace sm_nav2_test_1
+{
 using namespace cl_nav2z;
+using namespace cl_keyboard;
 
 // STATE DECLARATION
-struct StSpin1 : smacc2::SmaccState<StSpin1, MsNav2Test1RunMode> {
+struct StSpinLeft1 : smacc2::SmaccState<StSpinLeft1, MsNav2Test1RunMode>
+{
   using SmaccState::SmaccState;
 
   // DECLARE CUSTOM OBJECT TAGS
@@ -33,31 +38,18 @@ struct StSpin1 : smacc2::SmaccState<StSpin1, MsNav2Test1RunMode> {
   // TRANSITION TABLE
   typedef mpl::list<
 
-      Transition<EvCbSuccess<CbAbsoluteRotate, OrNavigation>, StSpin2,
-                 SUCCESS>,
-      Transition<EvCbFailure<CbAbsoluteRotate, OrNavigation>, StSpin1,
-                 ABORT>,
+    Transition<EvCbSuccess<CbPureSpinning, OrNavigation>, StNavigateToWaypoint1>,
+    Transition<EvCbFailure<CbPureSpinning, OrNavigation>, StSpinLeft1>,
 
-      // Keyboard events  
-      Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpin2, NEXT>
-      >
-      reactions;
+    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StNavigateToWaypoint1, NEXT>
+
+    >reactions;
 
   // STATE FUNCTIONS
-  static void staticConfigure() {
-    configure_orthogonal<OrNavigation, CbAbsoluteRotate>();
+  static void staticConfigure()
+  {
+    configure_orthogonal<OrNavigation, CbPureSpinning>(-2*M_PI, 1.0 /*rad_s*/);
     configure_orthogonal<OrNavigation, CbResumeSlam>();
-    configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
-  }
-
-  void runtimeConfigure() {
-    auto cbAbsRotate =
-        this->getClientBehavior<OrNavigation, CbAbsoluteRotate>();
-
-    auto angleSetValue = 360;
-
-    cbAbsRotate->spinningPlanner = SpinningPlanner::PureSpinning;
-    cbAbsRotate->absoluteGoalAngleDegree = angleSetValue;
   }
 };
-} // namespace sm_nav2_test_1
+}  // namespace sm_nav2_test_1

@@ -12,8 +12,8 @@ using namespace cl_nav2z;
 using namespace cl_keyboard;
 
 // STATE DECLARATION
-struct StInitialMoveStop
-    : smacc2::SmaccState<StInitialMoveStop, MsNav2Test1RunMode> {
+struct StSwitchYard
+    : smacc2::SmaccState<StSwitchYard, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
    // DECLARE CUSTOM OBJECT TAGS
@@ -23,30 +23,22 @@ struct StInitialMoveStop
 
   // TRANSITION TABLE
   typedef mpl::list<
-    Transition<EvCbSuccess<CbSleepFor, OrNavigation>, StSwitchYard, SUCCESS>,
+    Transition<EvCbSuccess<CbSleepFor, OrNavigation>, StSpinRight1, SUCCESS>,
     //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSwitchYard, NEXT>,
-    Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMove, PREVIOUS>
+    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpinRight1, NEXT>,
+    Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMoveStop, PREVIOUS>
   > reactions;
 
 //   CpTopicPublisher<geometry_msgs::msg::Twist> *pub;
 
   // STATE FUNCTIONS
   static void staticConfigure() {
-    configure_orthogonal<OrNavigation, CbSleepFor>(2s);
+    configure_orthogonal<OrNavigation, CbSleepFor>(15s);
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
 
   void runtimeConfigure() {}
 
-  void onEntry() {
-    cl_nav2z::ClNav2Z* clNav;
-    this->requiresClient(clNav);
-    auto pub = clNav->getComponent<smacc2::components::CpTopicPublisher<geometry_msgs::msg::Twist>>();
-    auto twist_msg = std::make_shared<geometry_msgs::msg::Twist>();
-    twist_msg->linear.x = 0.0; 
-    twist_msg->angular.z = 0.0; 
-    pub->publish(*twist_msg);
-  }
+  void onEntry() {}
 };
 } 
