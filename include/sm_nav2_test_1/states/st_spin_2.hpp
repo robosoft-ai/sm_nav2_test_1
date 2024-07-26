@@ -17,51 +17,41 @@
  * 	 Authors: Pablo Inigo Blasco, Brett Aldrich
  *
  ******************************************************************************************************************/
-
 #pragma once
 
+#include <smacc2/client_behaviors/cb_ros_launch_2.hpp>
 #include <smacc2/smacc.hpp>
-// #include <nav2z_client/client_behavior>
+#include <keyboard_client/client_behaviors/cb_default_keyboard_behavior.hpp>
 
 namespace sm_nav2_test_1 {
 using namespace smacc2::default_events;
 using smacc2::client_behaviors::CbSleepFor;
-using cl_nav2z::CbNavigateGlobalPosition;
 using namespace std::chrono_literals;
+using cl_keyboard::CbDefaultKeyboardBehavior;
 using namespace cl_nav2z;
-using namespace cl_keyboard;
-
-
 
 // STATE DECLARATION
-struct StNavigateToWaypoint1 : smacc2::SmaccState<StNavigateToWaypoint1, MsNav2Test1RunMode>
-{
+struct StSpin2
+    : smacc2::SmaccState<StSpin2, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
-   // DECLARE CUSTOM OBJECT TAGS
+    // DECLARE CUSTOM OBJECT TAGS
   struct NEXT : SUCCESS{};
   struct PREVIOUS : ABORT{};
 
   // TRANSITION TABLE
-  typedef mpl::list<
-
-    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, StLoadingWayPointsFile, SUCCESS>,
-    //Transition<EvCbFailure<CbNavigateGlobalPosition, OrNavigation>, StNavigateWarehouseWaypointsX, ABORT>
-
-    //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StLoadingWayPointsFile, NEXT>,
-    Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMoveStop, PREVIOUS>
-    >reactions;
+  typedef mpl::list<Transition<EvCbSuccess<CbPureSpinning, OrNavigation>, StSpin3, SUCCESS>,
+                    Transition<EvCbFailure<CbPureSpinning, OrNavigation>, StSpin2, ABORT>,
+                    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpin3, NEXT>
+                    >
+      reactions;
 
   // STATE FUNCTIONS
-  static void staticConfigure()
-  {
-
-    // x: 0.0 #-2.0
-    // y: 5.25 # 0.5
-    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-2.0, -2.0, 0.0);
-    configure_orthogonal<OrNavigation, CbResumeSlam>();
+  static void staticConfigure() {
+    configure_orthogonal<OrNavigation, CbPureSpinning>(M_PI * 2, 0.8);
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
+
+  void runtimeConfigure() {}
 };
-}  // namespace sm_nav2_test_1
+} // namespace sm_nav2_test_1

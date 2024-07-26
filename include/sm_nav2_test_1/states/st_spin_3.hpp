@@ -21,47 +21,35 @@
 #pragma once
 
 #include <smacc2/smacc.hpp>
-// #include <nav2z_client/client_behavior>
-
-namespace sm_nav2_test_1 {
-using namespace smacc2::default_events;
-using smacc2::client_behaviors::CbSleepFor;
-using cl_nav2z::CbNavigateGlobalPosition;
-using namespace std::chrono_literals;
+namespace sm_nav2_test_1
+{
 using namespace cl_nav2z;
 using namespace cl_keyboard;
 
-
-
 // STATE DECLARATION
-struct StNavigateToWaypoint1 : smacc2::SmaccState<StNavigateToWaypoint1, MsNav2Test1RunMode>
+struct StSpin3 : smacc2::SmaccState<StSpin3, MsNav2Test1RunMode>
 {
   using SmaccState::SmaccState;
 
-   // DECLARE CUSTOM OBJECT TAGS
+  // DECLARE CUSTOM OBJECT TAGS
   struct NEXT : SUCCESS{};
   struct PREVIOUS : ABORT{};
 
   // TRANSITION TABLE
   typedef mpl::list<
 
-    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, StLoadingWayPointsFile, SUCCESS>,
-    //Transition<EvCbFailure<CbNavigateGlobalPosition, OrNavigation>, StNavigateWarehouseWaypointsX, ABORT>
+    Transition<EvCbSuccess<CbPureSpinning, OrNavigation>, StNavigateToWaypoint1>,
+    Transition<EvCbFailure<CbPureSpinning, OrNavigation>, StSpin3>,
 
-    //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StLoadingWayPointsFile, NEXT>,
-    Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMoveStop, PREVIOUS>
+    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StNavigateToWaypoint1, NEXT>
+
     >reactions;
 
   // STATE FUNCTIONS
   static void staticConfigure()
   {
-
-    // x: 0.0 #-2.0
-    // y: 5.25 # 0.5
-    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-2.0, -2.0, 0.0);
+    configure_orthogonal<OrNavigation, CbPureSpinning>(-2*M_PI, 1.0 /*rad_s*/);
     configure_orthogonal<OrNavigation, CbResumeSlam>();
-    configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
 };
 }  // namespace sm_nav2_test_1

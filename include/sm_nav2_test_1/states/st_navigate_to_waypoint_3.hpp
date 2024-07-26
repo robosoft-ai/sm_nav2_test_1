@@ -31,10 +31,8 @@ using namespace std::chrono_literals;
 using namespace cl_nav2z;
 using namespace cl_keyboard;
 
-
-
 // STATE DECLARATION
-struct StNavigateToWaypoint1 : smacc2::SmaccState<StNavigateToWaypoint1, MsNav2Test1RunMode>
+struct StNavigateToWaypoint3 : smacc2::SmaccState<StNavigateToWaypoint2, MsNav2Test1RunMode>
 {
   using SmaccState::SmaccState;
 
@@ -45,21 +43,16 @@ struct StNavigateToWaypoint1 : smacc2::SmaccState<StNavigateToWaypoint1, MsNav2T
   // TRANSITION TABLE
   typedef mpl::list<
 
-    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, StLoadingWayPointsFile, SUCCESS>,
-    //Transition<EvCbFailure<CbNavigateGlobalPosition, OrNavigation>, StNavigateWarehouseWaypointsX, ABORT>
+    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, SS2::SsSPattern1, SUCCESS>,
 
     //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StLoadingWayPointsFile, NEXT>,
-    Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMoveStop, PREVIOUS>
+    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, SS2::SsSPattern1, NEXT>
     >reactions;
 
   // STATE FUNCTIONS
   static void staticConfigure()
   {
-
-    // x: 0.0 #-2.0
-    // y: 5.25 # 0.5
-    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-2.0, -2.0, 0.0);
+    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-3.0, -7.0, 0.0);
     configure_orthogonal<OrNavigation, CbResumeSlam>();
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
