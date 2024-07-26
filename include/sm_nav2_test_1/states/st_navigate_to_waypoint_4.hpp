@@ -32,7 +32,7 @@ using namespace cl_nav2z;
 using namespace cl_keyboard;
 
 // STATE DECLARATION
-struct StNavigateToWaypoint4 : smacc2::SmaccState<StNavigateToWaypoint2, MsNav2Test1RunMode>
+struct StNavigateToWaypoint4 : smacc2::SmaccState<StNavigateToWaypoint4, MsNav2Test1RunMode>
 {
   using SmaccState::SmaccState;
 
@@ -43,10 +43,10 @@ struct StNavigateToWaypoint4 : smacc2::SmaccState<StNavigateToWaypoint2, MsNav2T
   // TRANSITION TABLE
   typedef mpl::list<
 
-    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, SS1::SsRadialPattern1, SUCCESS>,
+    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, SS3::SsFPattern1, SUCCESS>,
 
     //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, SS1::SsRadialPattern1, NEXT>
+    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, SS3::SsFPattern1, NEXT>
     >reactions;
 
   // STATE FUNCTIONS
