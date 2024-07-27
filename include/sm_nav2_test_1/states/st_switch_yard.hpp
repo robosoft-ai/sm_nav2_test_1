@@ -28,6 +28,7 @@ struct StSwitchYard
     Transition<EvKeyPressR<CbDefaultKeyboardBehavior, OrKeyboard>, StNavigateToWaypoint2, NEXT>,
     Transition<EvKeyPressS<CbDefaultKeyboardBehavior, OrKeyboard>, StNavigateToWaypoint3, NEXT>,
     Transition<EvKeyPressF<CbDefaultKeyboardBehavior, OrKeyboard>, StNavigateToWaypoint4, NEXT>,
+    Transition<EvKeyPressB<CbDefaultKeyboardBehavior, OrKeyboard>, StBackup1, NEXT>,
 
     Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpinRight1, NEXT>,
     Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMoveStop, PREVIOUS>

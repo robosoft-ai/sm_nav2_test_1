@@ -92,6 +92,7 @@ class StNavigateToWaypoint2;
 class StNavigateToWaypoint3;
 class StNavigateToWaypoint4;
 class StLoadingWayPointsFile;
+class StBackup1;
 
 // SUPERSTATE FORWARD DECLARATIONS
 // MODE STATES FORWARD DECLARATIONS
@@ -173,3 +174,4 @@ struct SmNav2Test1
 #include <sm_nav2_test_1/states/st_navigate_to_waypoint_4.hpp>
 #include <sm_nav2_test_1/states/st_loading_waypoints_file.hpp>
 #include <sm_nav2_test_1/states/st_final_return_back_to_origin.hpp>
+#include <sm_nav2_test_1/states/st_backup_1.hpp>

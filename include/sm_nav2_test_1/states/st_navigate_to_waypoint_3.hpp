@@ -32,7 +32,7 @@ using namespace cl_nav2z;
 using namespace cl_keyboard;
 
 // STATE DECLARATION
-struct StNavigateToWaypoint3 : smacc2::SmaccState<StNavigateToWaypoint2, MsNav2Test1RunMode>
+struct StNavigateToWaypoint3 : smacc2::SmaccState<StNavigateToWaypoint3, MsNav2Test1RunMode>
 {
   using SmaccState::SmaccState;
 
@@ -52,7 +52,7 @@ struct StNavigateToWaypoint3 : smacc2::SmaccState<StNavigateToWaypoint2, MsNav2T
   // STATE FUNCTIONS
   static void staticConfigure()
   {
-    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-3.0, -7.0, 0.0);
+    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-15.5, -15.0, 0.0);
     configure_orthogonal<OrNavigation, CbResumeSlam>();
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }

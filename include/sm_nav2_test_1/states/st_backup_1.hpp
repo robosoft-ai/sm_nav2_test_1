@@ -18,43 +18,40 @@
  *
  ******************************************************************************************************************/
 
-#pragma once
-
-#include <smacc2/smacc.hpp>
-// #include <nav2z_client/client_behavior>
-
 namespace sm_nav2_test_1 {
-using namespace smacc2::default_events;
-using smacc2::client_behaviors::CbSleepFor;
-using cl_nav2z::CbNavigateGlobalPosition;
-using namespace std::chrono_literals;
-using namespace cl_nav2z;
+using namespace cl_nav2z;  
 using namespace cl_keyboard;
 
 // STATE DECLARATION
-struct StNavigateToWaypoint4 : smacc2::SmaccState<StNavigateToWaypoint4, MsNav2Test1RunMode>
-{
+struct StBackup1 : smacc2::SmaccState<StBackup1, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
-   // DECLARE CUSTOM OBJECT TAGS
+  // DECLARE CUSTOM OBJECT TAGS
   struct NEXT : SUCCESS{};
   struct PREVIOUS : ABORT{};
 
   // TRANSITION TABLE
   typedef mpl::list<
 
-    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, SS3::SsFPattern1, SUCCESS>,
-
-    //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, SS3::SsFPattern1, NEXT>
-    >reactions;
+      Transition<EvCbSuccess<CbNavigateBackwards, OrNavigation>, StFinalState,
+                 SUCCESS>,
+      Transition<EvCbFailure<CbNavigateBackwards, OrNavigation>, StFinalState,
+                 ABORT>,
+     
+      // Keyboard events  
+      Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StFinalState, NEXT>
+      >
+      reactions;
 
   // STATE FUNCTIONS
-  static void staticConfigure()
-  {
-    configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(-15.5, -15.0, 0.0);
-    configure_orthogonal<OrNavigation, CbResumeSlam>();
+  static void staticConfigure() {
+    // RCLCPP_INFO(getLogger(),"ssr radial end point, distance in meters: %lf",
+    // SS::ray_length_meters());
+    configure_orthogonal<OrNavigation, CbNavigateBackwards>(3.0);
+    //configure_orthogonal<OrNavigation, CbPauseSlam>();
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
+
+  void runtimeConfigure() {}
 };
-}  // namespace sm_nav2_test_1
+} // namespace sm_nav2_test_1
