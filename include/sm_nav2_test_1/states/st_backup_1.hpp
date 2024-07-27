@@ -19,11 +19,11 @@
  ******************************************************************************************************************/
 
 namespace sm_nav2_test_1 {
+using namespace cl_nav2z;  
 using namespace cl_keyboard;
-using namespace cl_nav2z;
 
 // STATE DECLARATION
-struct StSpin1 : smacc2::SmaccState<StSpin1, MsNav2Test1RunMode> {
+struct StBackup1 : smacc2::SmaccState<StBackup1, MsNav2Test1RunMode> {
   using SmaccState::SmaccState;
 
   // DECLARE CUSTOM OBJECT TAGS
@@ -33,31 +33,25 @@ struct StSpin1 : smacc2::SmaccState<StSpin1, MsNav2Test1RunMode> {
   // TRANSITION TABLE
   typedef mpl::list<
 
-      Transition<EvCbSuccess<CbAbsoluteRotate, OrNavigation>, StSpin2,
+      Transition<EvCbSuccess<CbNavigateBackwards, OrNavigation>, StFinalState,
                  SUCCESS>,
-      Transition<EvCbFailure<CbAbsoluteRotate, OrNavigation>, StSpin1,
+      Transition<EvCbFailure<CbNavigateBackwards, OrNavigation>, StFinalState,
                  ABORT>,
-
+     
       // Keyboard events  
-      Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpin2, NEXT>
+      Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StFinalState, NEXT>
       >
       reactions;
 
   // STATE FUNCTIONS
   static void staticConfigure() {
-    configure_orthogonal<OrNavigation, CbAbsoluteRotate>();
-    configure_orthogonal<OrNavigation, CbResumeSlam>();
+    // RCLCPP_INFO(getLogger(),"ssr radial end point, distance in meters: %lf",
+    // SS::ray_length_meters());
+    configure_orthogonal<OrNavigation, CbNavigateBackwards>(3.0);
+    //configure_orthogonal<OrNavigation, CbPauseSlam>();
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
 
-  void runtimeConfigure() {
-    auto cbAbsRotate =
-        this->getClientBehavior<OrNavigation, CbAbsoluteRotate>();
-
-    auto angleSetValue = 360;
-
-    cbAbsRotate->spinningPlanner = SpinningPlanner::PureSpinning;
-    cbAbsRotate->absoluteGoalAngleDegree = angleSetValue;
-  }
+  void runtimeConfigure() {}
 };
 } // namespace sm_nav2_test_1

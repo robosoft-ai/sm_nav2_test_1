@@ -55,9 +55,9 @@ public:
 
   // STATE VARIABLES
   // superstate parameters
-  static constexpr float ray_lenght_meters() { return 1.75; }
-  static constexpr float pitch_lenght_meters() { return 0.75; }
-  static constexpr int total_iterations() { return 3; }
+  static constexpr float ray_lenght_meters() { return 6.0; }
+  static constexpr float pitch_lenght_meters() { return 1.0; }
+  static constexpr int total_iterations() { return 4; }
   static constexpr TDirection direction() { return TDirection::RIGHT; }
 
   // superstate state variables

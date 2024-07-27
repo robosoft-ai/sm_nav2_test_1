@@ -23,9 +23,9 @@ struct StInitialMoveStop
 
   // TRANSITION TABLE
   typedef mpl::list<
-    Transition<EvCbSuccess<CbSleepFor, OrNavigation>, StSpin2, SUCCESS>,
+    Transition<EvCbSuccess<CbSleepFor, OrNavigation>, StSwitchYard, SUCCESS>,
     //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSpin3, NEXT>,
+    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StSwitchYard, NEXT>,
     Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMove, PREVIOUS>
   > reactions;
 
@@ -33,7 +33,7 @@ struct StInitialMoveStop
 
   // STATE FUNCTIONS
   static void staticConfigure() {
-    configure_orthogonal<OrNavigation, CbSleepFor>(10s);
+    configure_orthogonal<OrNavigation, CbSleepFor>(2s);
     configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
   }
 

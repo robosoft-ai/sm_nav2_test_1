@@ -220,8 +220,8 @@ controller_server:
       carrot_distance: 0.8 #meters default 0.5
       carrot_angular_distance: 0.35 # no constraint, max 3.1416
       pure_spinning_straight_line_mode: true
-      max_linear_x_speed: 0.3
-      max_angular_z_speed: 0.3
+      max_linear_x_speed: 0.15
+      max_angular_z_speed: 0.15
     ForwardLocalPlanner:
       plugin: "cl_nav2z::forward_local_planner::ForwardLocalPlanner"
       transform_tolerance: 0.5
@@ -236,7 +236,7 @@ controller_server:
       plugin: "pure_spinning_local_planner::PureSpinningLocalPlanner"
       transform_tolerance: 0.5
       k_betta: 25.0
-      max_angular_z_speed: 0.4
+      max_angular_z_speed: 0.3
       use_shortest_angular_distance: true
 
 controller_server_rclcpp_node:
