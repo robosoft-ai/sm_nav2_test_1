@@ -9,8 +9,13 @@ For simulation, we'll be using IsaacSim 4.0.
 Under the IsaacAssets tab go to SAMPLES/NVBLOX/nvblox_sample_scene.
 
 Once inside, you'll need to fing the NOVA_Carter_ROS_nvblox_setup Folder.
-For caster_wheel_left and caster_wheel_right, set the Max Angular Velocity to 1000.
-Then, find the ros_lidars folder and enable publish_front_2d_lidar_scan and front_2d_lidar_render_product.
+For caster_wheel_left and caster_wheel_right, set the Max Angular Velocity to 500.
+Then set the Mass to 10.0 for each one.
+
+Then, find the chassis_link Mass and change it to 30.0
+Find wheel_material and set Dynamic Friction to 2.0, and Static Friction to 2.0.
+
+Deactivate the Dynamics Xform.
 
 ## Let's Get Started
 We begin by cloning isaac_ros_common and nova_carter repos to the src folder of our local workspace. My local workspace is ~/workspace/humble_ws

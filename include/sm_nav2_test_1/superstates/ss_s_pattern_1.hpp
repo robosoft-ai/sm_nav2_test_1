@@ -52,7 +52,7 @@ public:
 
       // Transition<EvLoopEnd<StiSPatternLoopStart>, StNavigateReverse3,
       // ENDLOOP>
-      Transition<EvLoopEnd<StiSPatternLoopStart>, StFinalState,
+      Transition<EvLoopEnd<StiSPatternLoopStart>, StNavigateToWaypoint4,
                  ENDLOOP> //,
 
       >
