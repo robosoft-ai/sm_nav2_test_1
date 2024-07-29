@@ -220,6 +220,13 @@ def generate_launch_description():
     #     }.items(),
     # )
 
+    # The `sm_nav2_test_1_node` is a Node that is being launched as part of the ROS 2 launch script.
+    # It belongs to the package `sm_nav2_test_1` and the executable being run is
+    # `sm_nav2_test_1_node`. This node is responsible for running a specific functionality or behavior
+    # related to navigation testing within the context of the `sm_nav2_test_1` package.
+    # The `sm_nav2_test_1_node` is a Node that is being launched as part of the overall launch script.
+    # It belongs to the package `sm_nav2_test_1` and its purpose is to execute the
+    # `sm_nav2_test_1_node` executable.
     sm_nav2_test_1_node = Node(
         package="sm_nav2_test_1",
         executable="sm_nav2_test_1_node",

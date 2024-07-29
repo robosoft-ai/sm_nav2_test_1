@@ -17,6 +17,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
+    xtermprefix = "xterm -xrm 'XTerm*scrollBar:  true' -xrm 'xterm*rightScrollBar: true' -hold -geometry 1000x600 -sl 10000 -e"
+
     use_sim_time = LaunchConfiguration("use_sim_time", default="True")
 
     active_slam_sel = LaunchConfiguration("active_slam_sel", default="False")
@@ -113,7 +115,7 @@ def generate_launch_description():
                 package="pointcloud_to_laserscan",
                 executable="pointcloud_to_laserscan_node",
                 # remappings=[("cloud_in", ["/front_3d_lidar/point_cloud"]), ("scan", ["/scan"])],
-                remappings=[("cloud_in", ["/front_3d_lidar/point_cloud"]), ("scan", ["/scan2"])],
+                remappings=[("cloud_in", ["/front_3d_lidar/point_cloud"])],
                 parameters=[
                     {
                         "target_frame": "front_3d_lidar",
@@ -131,6 +133,15 @@ def generate_launch_description():
                     }
                 ],
                 name="pointcloud_to_laserscan",
+            ),
+            Node(
+                package="nav2z_client",
+                executable="lidar_completion.py",
+                name="lidar_completion",
+                output="screen",
+                # remappings=[("/scan_input", "/scan2"), ("/scan_output", "/scan")],
+                prefix=xtermprefix
+
             ),
         ]
     )
