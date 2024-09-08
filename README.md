@@ -1,3 +1,10 @@
+ # State Machine Diagram
+
+ ![sm_nav2_test_1](docs/SmNav2Test1_2024-9-7_222547.svg)
+
+ ## Description 
+ A state machine application for the NOVA Carter using Nav2 and the SMACC nav2z Client Behavior Library.
+
 # Workflow
 ## Setting up an IsaacROSDev Container
 [https://nvidia-isaac-ros.github.io/concepts/docker_devenv/index.html#development-environment](https://nvidia-isaac-ros.github.io/concepts/docker_devenv/index.html#development-environment)  

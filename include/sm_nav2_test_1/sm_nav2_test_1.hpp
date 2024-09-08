@@ -91,7 +91,7 @@ class StNavigateToWaypoint1;
 class StNavigateToWaypoint2;
 class StNavigateToWaypoint3;
 class StNavigateToWaypoint4;
-class StLoadingWayPointsFile;
+class StLoadingWaypointsFile;
 class StBackup1;
 
 // SUPERSTATE FORWARD DECLARATIONS
