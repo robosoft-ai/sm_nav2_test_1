@@ -45,11 +45,11 @@ struct StNavigateToWaypoint1 : smacc2::SmaccState<StNavigateToWaypoint1, MsNav2T
   // TRANSITION TABLE
   typedef mpl::list<
 
-    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, StLoadingWayPointsFile, SUCCESS>,
+    Transition<EvCbSuccess<CbNavigateGlobalPosition, OrNavigation>, StLoadingWaypointsFile, SUCCESS>,
     //Transition<EvCbFailure<CbNavigateGlobalPosition, OrNavigation>, StNavigateWarehouseWaypointsX, ABORT>
 
     //Keyboard events
-    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StLoadingWayPointsFile, NEXT>,
+    Transition<EvKeyPressN<CbDefaultKeyboardBehavior, OrKeyboard>, StLoadingWaypointsFile, NEXT>,
     Transition<EvKeyPressP<CbDefaultKeyboardBehavior, OrKeyboard>, StInitialMoveStop, PREVIOUS>
     >reactions;
 
