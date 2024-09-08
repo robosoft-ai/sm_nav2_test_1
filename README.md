@@ -5,7 +5,7 @@
 [https://nvidia-isaac-ros.github.io/robots/nova_carter/getting_started.html#nova-carter-dev-setup](https://nvidia-isaac-ros.github.io/robots/nova_carter/getting_started.html#nova-carter-dev-setup)  
 
 ## Simulation Environment
-For simulation, we'll be using IsaacSim 4.0. Under the IsaacAssets tab go to SAMPLES/NVBLOX/nvblox_sample_scene.
+For simulation, we'll be using IsaacSim 4.1. Under the IsaacAssets tab go to SAMPLES/NVBLOX/nvblox_sample_scene.
 
 Once inside, you'll need to fing the NOVA_Carter_ROS_nvblox_setup Folder. For caster_wheel_left and caster_wheel_right, set the Max Angular Velocity to 500. Then set the Mass to 10.0 for each one.
 
